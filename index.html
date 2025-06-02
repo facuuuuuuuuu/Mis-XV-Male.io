@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mis 15 - Invitación</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Quicksand&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Quicksand', sans-serif;
+      background: linear-gradient(135deg, #cf7293, #c946e0, #8263bd, #2593a1);
+      background-size: 400% 400%;
+      animation: fondoAnimado 15s ease infinite;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+
+    }
+
+    @keyframes fondoAnimado {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+     .mandala-img {
+      position: absolute;
+      bottom: 25px;
+      right: 25px;
+      width: 300px;
+      opacity: 1;
+      z-index: 10;
+      pointer-events: none;
+    }
+    .mandala-img-superior {
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  width: 300px;
+  opacity: 1;
+  z-index: 10;
+  pointer-events: none;
+}
+
+    .cortinas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      z-index: 10;
+    }
+
+    .cortina {
+      flex: 1;
+      background: radial-gradient(circle, #c013df, #880835);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 1s ease;
+      overflow: hidden;
+    }
+
+    .cortina-izquierda {
+      border-right: 2px solid white;
+    }
+
+    .cortina-derecha {
+      border-left: 2px solid white;
+    }
+
+    .mensaje-carta {
+      font-family: 'Great Vibes', cursive;
+      font-size: 55px;
+      color: rgb(248, 248, 248);
+      text-shadow: 0 0 10px #635bdd;
+    }
+
+    .cortinas.abierta .cortina-izquierda {
+      transform: translateX(-100%);
+    }
+
+    .cortinas.abierta .cortina-derecha {
+      transform: translateX(100%);
+    }
+
+    .contenido {
+      opacity: 0;
+      transition: opacity 1s ease 1s;
+      text-align: center;
+      z-index: 1;
+      padding: 20px;
+      max-width: 400px;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 0 30px rgba(0,0,0,0.3);
+    }
+
+    .contenido.visible {
+      opacity: 1;
+    }
+
+    .contenido img {
+      width: 95px;
+      height: 90px;
+      margin-bottom: 10px;
+    }
+
+    .contenido h2 { 
+      font-family: 'Great Vibes', cursive;
+      font-size: 45px;
+      color: #880e4f;
+    }
+
+ .contenido h3{
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif, cursive;
+  font-size: 20px;
+  color:#880e4f
+ }
+
+    
+
+    .contenido p {
+      color: #6a1b9a;
+      margin: 5px 0;
+      font-size: large;
+    }
+
+    .contador {
+      font-weight: bold;
+      margin-top: 10px;
+      color: #ad1457;
+    }
+
+    .acciones {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .acciones a {
+      text-decoration: none;
+      background: #ab47bc;
+      color: white;
+      padding: 10px;
+      border-radius: 25px;
+      transition: background 0.3s;
+      font-weight: bold;
+    }
+
+    .acciones a:hover {
+      background: #8e24aa;
+    }
+  </style>
+</head>
+<body onclick="abrirCortinas()">
+
+  <div class="cortinas" id="cortinas">
+    <div class="cortina cortina-izquierda">
+      <div class="mensaje-carta">Malena</div>
+    </div>
+    <div class="cortina cortina-derecha">
+      <div class="mensaje-carta">Mis 15</div>
+    </div>
+  </div>
+
+<div>
+    <img src="https://png.pngtree.com/png-vector/20240917/ourmid/pngtree-circular-pattern-in-the-form-of-a-mandala-henna-tatoo-mandala-png-image_13848264.png" alt="Mandala" class="mandala-img">
+<img src="https://png.pngtree.com/png-vector/20240917/ourmid/pngtree-circular-pattern-in-the-form-of-a-mandala-henna-tatoo-mandala-png-image_13848264.png" alt="Mandala esquina superior" class="mandala-img-superior">
+
+</div>
+  <div class="contenido" id="contenido">
+    <img src="https://img.freepik.com/fotos-premium/flor-loto-blanco_62678-721.jpg" alt="Flor de Loto" height="50">
+    <h2>¡Estás invitado!</h2>
+    <h3>18/10 de 21:00 a 05:00</h3>
+    <p>Hay momentos en la vida que marcan un antes y despues. Lo que los hace realmente especial son las personas con las que se comparten. Por eso quiero que seas parte de mi fiesta de xv</p>
+    <p>Faltan:</p>
+    <div class="contador" id="contador"></div>
+
+    <div class="acciones">
+      <a href="https://maps.app.goo.gl/em5t7Lz7CqouYMzH8" target="_blank">Ver ubicación del salón</a>
+      <a href="https://docs.google.com/presentation/d/1XQXBO4E1-J-mYhiZaY8LbcqlwNQrZ4SK5jW_5I1yfM0/edit?usp=sharing" target="_blank">Codigo de vestimenta</a>
+      <a href="https://wa.link/bzaomt" target="_blank">Confirmar asistencia</a>
+      <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&dates=20251019T000000Z%2F20251019T080000Z&details=.&location=Elizalde%201132%2C%20gerli&text=fiesta%20de%20xv%20de%20Male" target="_blank">Agendar en el calendario</a>
+    </div>
+  </div>
+
+  <script>
+    function abrirCortinas() {
+      const cortinas = document.getElementById('cortinas');
+      const contenido = document.getElementById('contenido');
+      cortinas.classList.add('abierta');
+      setTimeout(() => {
+        contenido.classList.add('visible');
+        cortinas.style.display = 'none';
+      }, 1000);
+    }
+
+    function actualizarContador() {
+      const destino = new Date("2025-10-18T21:00:00").getTime();
+      const ahora = new Date().getTime();
+      const diferencia = destino - ahora;
+
+      const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+      const horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
+      const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
+
+      document.getElementById("contador").innerHTML =
+        `${dias}d ${horas}h ${minutos}m ${segundos}s`;
+    }
+
+    setInterval(actualizarContador, 1000);
+  </script>
+</body>
+</html>
