@@ -6,7 +6,7 @@
   <title>Mis 15 - Invitación</title>
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Quicksand&display=swap" rel="stylesheet">
   <style>
-    body {
+   body {
       margin: 0;
       font-family: 'Quicksand', sans-serif;
       background: linear-gradient(135deg, #cf7293, #c946e0, #8263bd, #2593a1);
@@ -31,7 +31,7 @@
       bottom: 25px;
       right: 25px;
       width: 300px;
-      opacity: 0.2;
+      opacity: 1;
       z-index: 10;
       pointer-events: none;
     }
@@ -40,7 +40,7 @@
   top: 25px;
   left: 25px;
   width: 300px;
-  opacity: 0.2;
+  opacity: 1;
   z-index: 10;
   pointer-events: none;
 }
@@ -155,7 +155,179 @@
 
     .acciones a:hover {
       background: #8e24aa;
-    }
+    }body {
+  margin: 0;
+  font-family: 'Quicksand', sans-serif;
+  background: linear-gradient(135deg, #cf7293, #c946e0, #8263bd, #2593a1);
+  background-size: 400% 400%;
+  animation: fondoAnimado 15s ease infinite;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+@keyframes fondoAnimado {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.mandala-img,
+.mandala-img-superior {
+  position: absolute;
+  width: 150px;
+  max-width: 40vw;
+  opacity: 1;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.mandala-img {
+  bottom: 15px;
+  right: 15px;
+}
+
+.mandala-img-superior {
+  top: 15px;
+  left: 15px;
+}
+
+.cortinas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  z-index: 10;
+}
+
+.cortina {
+  flex: 1;
+  background: radial-gradient(circle, #c013df, #880835);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 1s ease;
+  overflow: hidden;
+}
+
+.cortina-izquierda {
+  border-right: 2px solid white;
+}
+
+.cortina-derecha {
+  border-left: 2px solid white;
+}
+
+.mensaje-carta {
+  font-family: 'Great Vibes', cursive;
+  font-size: 42px;
+  color: rgb(248, 248, 248);
+  text-shadow: 0 0 10px #635bdd;
+  text-align: center;
+  padding: 10px;
+}
+
+.cortinas.abierta .cortina-izquierda {
+  transform: translateX(-100%);
+}
+
+.cortinas.abierta .cortina-derecha {
+  transform: translateX(100%);
+}
+
+.contenido {
+  opacity: 0;
+  transition: opacity 1s ease 1s;
+  text-align: center;
+  z-index: 1;
+  padding: 20px;
+  max-width: 90vw;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(0,0,0,0.3);
+  box-sizing: border-box;
+}
+
+.contenido.visible {
+  opacity: 1;
+}
+
+.contenido img {
+  width: 70px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.contenido h2 { 
+  font-family: 'Great Vibes', cursive;
+  font-size: 35px;
+  color: #880e4f;
+}
+
+.contenido h3 {
+  font-size: 18px;
+  color: #880e4f;
+}
+
+.contenido p {
+  color: #6a1b9a;
+  margin: 5px 0;
+  font-size: 16px;
+}
+
+.contador {
+  font-weight: bold;
+  margin-top: 10px;
+  color: #ad1457;
+}
+
+.acciones {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.acciones a {
+  text-decoration: none;
+  background: #ab47bc;
+  color: white;
+  padding: 10px;
+  border-radius: 25px;
+  transition: background 0.3s;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.acciones a:hover {
+  background: #8e24aa;
+}
+
+@media (min-width: 600px) {
+  .contenido {
+    max-width: 400px;
+  }
+
+  .contenido h2 {
+    font-size: 45px;
+  }
+
+  .mensaje-carta {
+    font-size: 55px;
+  }
+
+  .mandala-img,
+  .mandala-img-superior {
+    width: 250px;
+  }
+}
+
   </style>
 </head>
 <body onclick="abrirCortinas()">
