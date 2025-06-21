@@ -6,44 +6,39 @@
   <title>Mis 15 - Invitación</title>
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Quicksand&display=swap" rel="stylesheet">
   <style>
-   body {
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
       margin: 0;
       font-family: 'Quicksand', sans-serif;
       background: linear-gradient(135deg, #cf7293, #c946e0, #8263bd, #2593a1);
       background-size: 400% 400%;
       animation: fondoAnimado 15s ease infinite;
-      overflow: hidden;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       min-height: 100vh;
-
+      padding: 20px;
+      overflow-x: hidden;
     }
 
     @keyframes fondoAnimado {
-      0% { background-position: 0% 50%; }
+      0%, 100% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
     }
-     .mandala-img {
+
+    .mandala-img, .mandala-img-superior {
       position: absolute;
-      bottom: 25px;
-      right: 25px;
-      width: 300px;
+      width: 150px;
       opacity: 0.5;
-      z-index: 10;
+      z-index: 1;
       pointer-events: none;
     }
-    .mandala-img-superior {
-  position: absolute;
-  top: 25px;
-  left: 25px;
-  width: 300px;
-  opacity: 0.5;
-  z-index: 10;
-  pointer-events: none;
-}
+
+    
 
     .cortinas {
       position: fixed;
@@ -52,7 +47,7 @@
       width: 100%;
       height: 100%;
       display: flex;
-      z-index: 10;
+      z-index: 20;
     }
 
     .cortina {
@@ -62,22 +57,18 @@
       align-items: center;
       justify-content: center;
       transition: transform 1s ease;
-      overflow: hidden;
     }
 
-    .cortina-izquierda {
-      border-right: 2px solid white;
-    }
-
-    .cortina-derecha {
-      border-left: 2px solid white;
-    }
+    .cortina-izquierda { border-right: 2px solid white; }
+    .cortina-derecha  { border-left: 2px solid white; }
 
     .mensaje-carta {
       font-family: 'Great Vibes', cursive;
-      font-size: 55px;
-      color: rgb(248, 248, 248);
+      font-size: 42px;
+      color: #fff;
       text-shadow: 0 0 10px #635bdd;
+      text-align: center;
+      padding: 10px;
     }
 
     .cortinas.abierta .cortina-izquierda {
@@ -92,10 +83,10 @@
       opacity: 0;
       transition: opacity 1s ease 1s;
       text-align: center;
-      z-index: 1;
-      padding: 20px;
-      max-width: 400px;
+      z-index: 5;
       background: white;
+      padding: 20px;
+      max-width: 95vw;
       border-radius: 20px;
       box-shadow: 0 0 30px rgba(0,0,0,0.3);
     }
@@ -105,35 +96,32 @@
     }
 
     .contenido img {
-      width: 95px;
-      height: 90px;
+      width: 120px;
+      height: auto;
       margin-bottom: 10px;
     }
 
-    .contenido h2 { 
+    .contenido h2 {
       font-family: 'Great Vibes', cursive;
-      font-size: 45px;
+      font-size: 32px;
       color: #880e4f;
     }
 
- .contenido h3{
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif, cursive;
-  font-size: 20px;
-  color:#880e4f
- }
-
-    
+    .contenido h3 {
+      font-size: 18px;
+      color: #880e4f;
+    }
 
     .contenido p {
+      font-size: 16px;
       color: #6a1b9a;
-      margin: 5px 0;
-      font-size: large;
+      margin: 10px 0;
     }
 
     .contador {
       font-weight: bold;
-      margin-top: 10px;
       color: #ad1457;
+      margin: 10px 0;
     }
 
     .acciones {
@@ -149,171 +137,50 @@
       color: white;
       padding: 10px;
       border-radius: 25px;
-      transition: background 0.3s;
       font-weight: bold;
+      transition: background 0.3s;
+      font-size: 15px;
     }
 
     .acciones a:hover {
       background: #8e24aa;
-    }body {
-  margin: 0;
-  font-family: 'Quicksand', sans-serif;
-  background: linear-gradient(135deg, #cf7293, #c946e0, #8263bd, #2593a1);
-  background-size: 400% 400%;
-  animation: fondoAnimado 15s ease infinite;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  padding: 20px;
-  box-sizing: border-box;
-}
+    }
 
-@keyframes fondoAnimado {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #d81b60;
+      color: white;
+      border: none;
+      border-radius: 20px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      z-index: 1000;
+    }
 
+    @media (min-width: 600px) {
+      .contenido {
+        max-width: 400px;
+      }
 
+      .contenido h2 {
+        font-size: 45px;
+      }
 
-.cortinas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  z-index: 10;
-}
+      .mensaje-carta {
+        font-size: 55px;
+      }
 
-.cortina {
-  flex: 1;
-  background: radial-gradient(circle, #c013df, #880835);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform 1s ease;
-  overflow: hidden;
-}
-
-.cortina-izquierda {
-  border-right: 2px solid white;
-}
-
-.cortina-derecha {
-  border-left: 2px solid white;
-}
-
-.mensaje-carta {
-  font-family: 'Great Vibes', cursive;
-  font-size: 42px;
-  color: rgb(248, 248, 248);
-  text-shadow: 0 0 10px #635bdd;
-  text-align: center;
-  padding: 10px;
-}
-
-.cortinas.abierta .cortina-izquierda {
-  transform: translateX(-100%);
-}
-
-.cortinas.abierta .cortina-derecha {
-  transform: translateX(100%);
-}
-
-.contenido {
-  opacity: 0;
-  transition: opacity 1s ease 1s;
-  text-align: center;
-  z-index: 1;
-  padding: 20px;
-  max-width: 90vw;
-  background: white;
-  border-radius: 20px;
-  box-shadow: 0 0 30px rgba(0,0,0,0.3);
-  box-sizing: border-box;
-}
-
-.contenido.visible {
-  opacity: 1;
-}
-
-.contenido img {
-  width: 150px;
-  height: auto;
-  margin-bottom: 10px;
-}
-
-.contenido h2 { 
-  font-family: 'Great Vibes', cursive;
-  font-size: 35px;
-  color: #880e4f;
-}
-
-.contenido h3 {
-  font-size: 18px;
-  color: #880e4f;
-}
-
-.contenido p {
-  color: #6a1b9a;
-  margin: 5px 0;
-  font-size: 16px;
-}
-
-.contador {
-  font-weight: bold;
-  margin-top: 10px;
-  color: #ad1457;
-}
-
-.acciones {
-  margin-top: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.acciones a {
-  text-decoration: none;
-  background: #ab47bc;
-  color: white;
-  padding: 10px;
-  border-radius: 25px;
-  transition: background 0.3s;
-  font-weight: bold;
-  font-size: 15px;
-}
-
-.acciones a:hover {
-  background: #8e24aa;
-}
-
-@media (min-width: 600px) {
-  .contenido {
-    max-width: 400px;
-  }
-
-  .contenido h2 {
-    font-size: 45px;
-  }
-
-  .mensaje-carta {
-    font-size: 55px;
-  }
-
-  .mandala-img,
-  .mandala-img-superior {
-    width: 250px;
-  }
-}
-
+      .mandala-img, .mandala-img-superior {
+        width: 250px;
+      }
+    }
   </style>
 </head>
 <body onclick="abrirCortinas()">
-
+  <!-- Cortinas -->
   <div class="cortinas" id="cortinas">
     <div class="cortina cortina-izquierda">
       <div class="mensaje-carta">Malena</div>
@@ -323,55 +190,47 @@
     </div>
   </div>
 
-<div>
- </div>
+  <!-- Mandalas -->
+ 
+
+  <!-- Contenido principal -->
   <div class="contenido" id="contenido">
-    <img src="https://img.freepik.com/fotos-premium/flor-loto-blanco_62678-721.jpg" alt="Flor de Loto" height="50">
+    <img src="https://img.freepik.com/fotos-premium/flor-loto-blanco_62678-721.jpg" alt="Flor de Loto">
     <h2>¡Estás invitado!</h2>
     <h3>18/10 de 21:00 a 05:00</h3>
-    <p>Hay momentos en la vida que marcan un antes y despues. Lo que los hace realmente especial son las personas con las que se comparten. Por eso quiero que seas parte de mi fiesta de xv</p>
+    <p>Hay momentos en la vida que marcan un antes y un después. Lo que los hace realmente especiales son las personas con las que se comparten.</p>
+    <p>Por eso quiero que seas parte de mi fiesta de XV</p>
     <p>Faltan:</p>
     <div class="contador" id="contador"></div>
 
     <div class="acciones">
-      <a href="https://maps.app.goo.gl/em5t7Lz7CqouYMzH8" target="_blank">Ver ubicación del salón</a>
-      <a href="https://docs.google.com/presentation/d/1XQXBO4E1-J-mYhiZaY8LbcqlwNQrZ4SK5jW_5I1yfM0/edit?usp=sharing" target="_blank">Codigo de vestimenta</a>
-      <a href="https://wa.link/bzaomt" target="_blank">Confirmar asistencia</a>
-      <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&dates=20251019T000000Z%2F20251019T080000Z&details=.&location=Elizalde%201132%2C%20gerli&text=fiesta%20de%20xv%20de%20Male" target="_blank">Agendar en el calendario</a>
+      <a href="https://maps.app.goo.gl/em5t7Lz7CqouYMzH8" target="_blank">📍 Ver ubicación del salón</a>
+      <a href="https://docs.google.com/presentation/d/1XQXBO4E1-J-mYhiZaY8LbcqlwNQrZ4SK5jW_5I1yfM0/edit?usp=sharing" target="_blank">👗 Código de vestimenta</a>
+      <a href="https://wa.link/bzaomt" target="_blank">✅ Confirmar asistencia</a>
+      <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&dates=20251019T000000Z%2F20251019T080000Z&details=.&location=Elizalde%201132%2C%20gerli&text=fiesta%20de%20xv%20de%20Male" target="_blank">🗓️ Agendar en el calendario</a>
     </div>
   </div>
-<!-- AUDIO Y BOTÓN -->
-<audio id="miCancion" src="Olivia Rodrigo - all-american bitch (live from rehearsal) [5myKp4ZD2KQ].mp3"></audio>
 
-<button onclick="reproducirMusica()" style="
-  margin-top: 20px;
-  padding: 10px 20px;
-  background-color: #d81b60;
-  color: white;
-  border: none;
-  border-radius: 20px;
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
-  z-index: 1000;
-">
-  🎵 Reproducir canción
-</button>
+  <!-- Audio -->
+  <audio id="miCancion" src="Olivia Rodrigo - all-american bitch (live from rehearsal) [5myKp4ZD2KQ].mp3"></audio>
+  <button onclick="reproducirMusica()">🎵 Reproducir canción</button>
+
   <script>
-   function abrirCortinas() {
-  const cortinas = document.getElementById('cortinas');
-  const contenido = document.getElementById('contenido');
-  const cancion = document.getElementById('miCancion');
+    function abrirCortinas() {
+      const cortinas = document.getElementById('cortinas');
+      const contenido = document.getElementById('contenido');
+      const cancion = document.getElementById('miCancion');
+      cortinas.classList.add('abierta');
+      setTimeout(() => {
+        contenido.classList.add('visible');
+        cortinas.style.display = 'none';
+        cancion.play();
+      }, 1000);
+    }
 
-  cortinas.classList.add('abierta');
-  setTimeout(() => {
-    contenido.classList.add('visible');
-    cortinas.style.display = 'none';
-    cancion.play(); // Reproduce la música automáticamente
-  }, 1000);
-}
-
+    function reproducirMusica() {
+      document.getElementById("miCancion").play();
+    }
 
     function actualizarContador() {
       const destino = new Date("2025-10-18T21:00:00").getTime();
@@ -383,8 +242,7 @@
       const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
       const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
 
-      document.getElementById("contador").innerHTML =
-        `${dias}d ${horas}h ${minutos}m ${segundos}s`;
+      document.getElementById("contador").innerText = `${dias}d ${horas}h ${minutos}m ${segundos}s`;
     }
 
     setInterval(actualizarContador, 1000);
