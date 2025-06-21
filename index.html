@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es"> 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -361,17 +361,38 @@
       <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&dates=20251019T000000Z%2F20251019T080000Z&details=.&location=Elizalde%201132%2C%20gerli&text=fiesta%20de%20xv%20de%20Male" target="_blank">Agendar en el calendario</a>
     </div>
   </div>
+<!-- AUDIO Y BOTÓN -->
+<audio id="miCancion" src="https://github.com/facuuuuuuuuu/Mis-XV-Male.io/blob/main/Olivia%20Rodrigo%20-%20all-american%20bitch%20(live%20from%20rehearsal)%20%5B5myKp4ZD2KQ%5D.mp3"></audio>
 
+<button onclick="reproducirMusica()" style="
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #d81b60;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  z-index: 1000;
+">
+  🎵 Reproducir canción
+</button>
   <script>
-    function abrirCortinas() {
-      const cortinas = document.getElementById('cortinas');
-      const contenido = document.getElementById('contenido');
-      cortinas.classList.add('abierta');
-      setTimeout(() => {
-        contenido.classList.add('visible');
-        cortinas.style.display = 'none';
-      }, 1000);
-    }
+   function abrirCortinas() {
+  const cortinas = document.getElementById('cortinas');
+  const contenido = document.getElementById('contenido');
+  const cancion = document.getElementById('miCancion');
+
+  cortinas.classList.add('abierta');
+  setTimeout(() => {
+    contenido.classList.add('visible');
+    cortinas.style.display = 'none';
+    cancion.play(); // Reproduce la música automáticamente
+  }, 1000);
+}
+
 
     function actualizarContador() {
       const destino = new Date("2025-10-18T21:00:00").getTime();
