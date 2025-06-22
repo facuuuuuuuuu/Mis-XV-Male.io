@@ -2,12 +2,17 @@
 <html lang="es"> 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
   <title>Mis 15 - Invitación</title>
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Quicksand&display=swap" rel="stylesheet">
   <style>
     * {
       box-sizing: border-box;
+    }
+
+    html, body {
+      max-width: 100%;
+      overflow-x: hidden;
     }
 
     body {
@@ -22,7 +27,6 @@
       justify-content: center;
       min-height: 100vh;
       padding: 20px;
-      overflow-x: hidden;
     }
 
     @keyframes fondoAnimado {
@@ -77,6 +81,7 @@
       background: white;
       padding: 20px;
       max-width: 95vw;
+      width: 100%;
       border-radius: 20px;
       box-shadow: 0 0 30px rgba(0,0,0,0.3);
     }
@@ -159,6 +164,8 @@
       font-weight: bold;
       transition: background 0.3s;
       font-size: 15px;
+      touch-action: manipulation;
+      -webkit-tap-highlight-color: transparent;
     }
 
     .acciones a:hover {
@@ -177,6 +184,8 @@
       cursor: pointer;
       box-shadow: 0 0 10px rgba(0,0,0,0.2);
       z-index: 1000;
+      touch-action: manipulation;
+      -webkit-tap-highlight-color: transparent;
     }
 
     @media (min-width: 600px) {
@@ -198,6 +207,14 @@
 
       .arabesco {
         height: 100px;
+      }
+    }
+
+    @media (max-width: 400px) {
+      button {
+        width: 90%;
+        font-size: 14px;
+        padding: 8px;
       }
     }
   </style>
