@@ -13,9 +13,9 @@
     body {
       margin: 0;
       font-family: 'Quicksand', sans-serif;
-      background: linear-gradient(135deg, #cf7293, #c946e0, #8263bd, #2593a1);
+      background: linear-gradient(135deg, #c946e0, #2593a1, #563692,#e05c04 );
       background-size: 400% 400%;
-      animation: fondoAnimado 15s ease infinite;
+      animation: fondoAnimado 10s ease infinite;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -29,16 +29,6 @@
       0%, 100% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
     }
-
-    .mandala-img, .mandala-img-superior {
-      position: absolute;
-      width: 150px;
-      opacity: 0.5;
-      z-index: 1;
-      pointer-events: none;
-    }
-
-    
 
     .cortinas {
       position: fixed;
@@ -95,10 +85,39 @@
       opacity: 1;
     }
 
-    .contenido img {
-      width: 120px;
+    .decoracion-superior {
+      position: relative;
+      height: 100px;
+      margin-bottom: 20px;
+    }
+
+    .flor-loto {
+      display: block;
+      margin: 0 auto;
       height: auto;
-      margin-bottom: 10px;
+      width: auto;
+      z-index: 2;
+      position: relative;
+    }
+
+    .arabesco {
+      position: absolute;
+      top: 0;
+      height: 180px;
+      opacity: 1;
+      z-index: 3;
+    }
+
+    .arabesco.izq {
+      left: 0;
+      height: auto;
+      width: auto;
+    }
+
+    .arabesco.der {
+      right: 0;
+    height: auto;
+      width: auto;
     }
 
     .contenido h2 {
@@ -133,7 +152,7 @@
 
     .acciones a {
       text-decoration: none;
-      background: #ab47bc;
+      background: #ad9c46;
       color: white;
       padding: 10px;
       border-radius: 25px;
@@ -149,7 +168,7 @@
     button {
       margin-top: 20px;
       padding: 10px 20px;
-      background-color: #d81b60;
+      background-color: #ad9c46;
       color: white;
       border: none;
       border-radius: 20px;
@@ -173,8 +192,12 @@
         font-size: 55px;
       }
 
-      .mandala-img, .mandala-img-superior {
-        width: 250px;
+      .flor-loto {
+        height: 120px;
+      }
+
+      .arabesco {
+        height: 100px;
       }
     }
   </style>
@@ -190,12 +213,14 @@
     </div>
   </div>
 
-  <!-- Mandalas -->
- 
-
   <!-- Contenido principal -->
   <div class="contenido" id="contenido">
-    <img src="https://img.freepik.com/fotos-premium/flor-loto-blanco_62678-721.jpg" alt="Flor de Loto">
+    <div class="decoracion-superior">
+      <img src="http://imgfz.com/i/8TqVYK2.png" alt="arabesco izq" class="arabesco izq">
+      <img src="https://img.freepik.com/fotos-premium/flor-loto-blanco_62678-721.jpg" alt="Flor de Loto" class="flor-loto">
+      <img src="http://imgfz.com/i/qyY0dxo.png" alt="arabesco der" class="arabesco der">
+    </div>
+
     <h2>¡Estás invitado!</h2>
     <h3>18/10 de 21:00 a 05:00</h3>
     <p>Hay momentos en la vida que marcan un antes y un después. Lo que los hace realmente especiales son las personas con las que se comparten.</p>
@@ -249,3 +274,4 @@
   </script>
 </body>
 </html>
+
